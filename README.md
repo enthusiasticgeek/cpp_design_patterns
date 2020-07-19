@@ -1,5 +1,9 @@
 # cpp_design_patterns
-Common Design Patterns in C++
+Common Design Patterns in C++ on Ubuntu Linux (>18.04) with g++ compiler.
+Note: One may modify CMakeLists.txt file to use clang++/llvm toolchain instead.
+
+# Dependencies
+sudo apt install g++ cmake valgrind
 
 Reference URLs:
 
