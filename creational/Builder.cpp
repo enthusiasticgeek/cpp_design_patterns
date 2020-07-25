@@ -72,15 +72,15 @@ class ConcreteBuilder1 : public Builder{
      */
 
     void BaseModel() const override{
-        this->product->parts_.push_back("PartA1");
+        this->product->parts_.push_back("RAV4 BASE MODEL");
     }
 
     void BlindSpotMonitoring() const override{
-        this->product->parts_.push_back("PartB1");
+        this->product->parts_.push_back("Blind Spot Monitoring");
     }
 
     void LaneDeviationAlert() const override{
-        this->product->parts_.push_back("PartC1");
+        this->product->parts_.push_back("Lane Deviation Alert");
     }
 
     /**
