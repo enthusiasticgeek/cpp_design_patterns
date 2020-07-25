@@ -6,7 +6,9 @@ set(CMAKE_CXX_EXTENSIONS FALSE)
 project(creational_design_pattern)
 add_executable(Factory Factory.cpp)
 add_executable(AbstractFactory AbstractFactory.cpp)
+add_executable(Builder Builder.cpp)
 install(TARGETS 
 	Factory 
 	AbstractFactory 
+	Builder 
 	DESTINATION bin)
