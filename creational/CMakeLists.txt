@@ -11,9 +11,11 @@ add_executable(AbstractFactory AbstractFactory.cpp)
 add_executable(Builder Builder.cpp)
 add_executable(Singleton Singleton.cpp)
 target_link_libraries(Singleton PRIVATE Threads::Threads)
+add_executable(Prototype Prototype.cpp)
 install(TARGETS 
 	Factory 
 	AbstractFactory 
 	Builder 
 	Singleton 
+	Prototype 
 	DESTINATION bin)
