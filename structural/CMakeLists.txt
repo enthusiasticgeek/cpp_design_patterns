@@ -7,6 +7,8 @@ project(creational_design_pattern)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 add_executable(Adapter Adapter.cpp)
+add_executable(Proxy Proxy.cpp)
 install(TARGETS 
 	Adapter 
+	Proxy 
 	DESTINATION bin)
