@@ -8,7 +8,9 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 add_executable(Adapter Adapter.cpp)
 add_executable(Proxy Proxy.cpp)
+add_executable(Composite Composite.cpp)
 install(TARGETS 
 	Adapter 
 	Proxy 
+	Composite 
 	DESTINATION bin)
