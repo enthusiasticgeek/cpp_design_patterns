@@ -12,7 +12,7 @@ class Component {
    * @var Component
    */
  protected:
-  std::shared_ptr<Component> parent_;
+  std::weak_ptr<Component> parent_;
   /**
    * Optionally, the base Component can declare an interface for setting and
    * accessing a parent of the component in a tree structure. It can also
@@ -24,7 +24,7 @@ class Component {
     this->parent_ = parent;
   }
   std::shared_ptr<Component> GetParent() const {
-    return this->parent_;
+    return this->parent_.lock();
   }
   /**
    * In some cases, it would be beneficial to define the child-management
@@ -142,7 +142,7 @@ void ClientCode2(std::shared_ptr<Component> component1, std::shared_ptr<Componen
  * This way the client code can support the simple leaf components...
  */
 
-int main() {
+int main(int argc, char* argv[]) {
   std::shared_ptr<Component> simple = std::make_shared<Leaf>() ;
   std::cout << "Client: I've got a simple component:\n";
   ClientCode(simple);
@@ -170,8 +170,6 @@ int main() {
   std::cout << "Client: I don't need to check the components classes even when managing the tree:\n";
   ClientCode2(tree, simple);
   std::cout << "\n";
-
-
 
   return 0;
 }
