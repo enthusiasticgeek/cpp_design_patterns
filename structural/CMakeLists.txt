@@ -7,10 +7,12 @@ project(creational_design_pattern)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 add_executable(Adapter Adapter.cpp)
+add_executable(Bridge Bridge.cpp)
 add_executable(Proxy Proxy.cpp)
 add_executable(Composite Composite.cpp)
 install(TARGETS 
 	Adapter 
+	Bridge 
 	Proxy 
 	Composite 
 	DESTINATION bin)
