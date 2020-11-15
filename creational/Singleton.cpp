@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
 #include <thread>
+#include <mutex>          // std::mutex, std::unique_lock
 
 /**
  * The Singleton class defines the `GetInstance` method that serves as an
@@ -23,6 +24,7 @@ protected:
     }
 
     static std::shared_ptr<Singleton> singleton_;
+    static std::mutex mutex_;
 
     /**
      * Singletons should not be cloneable.
@@ -79,6 +81,7 @@ public:
 };
 
 std::shared_ptr<Singleton> Singleton::singleton_(nullptr);
+std::mutex Singleton::mutex_;
 
 /**
  * Static methods should be defined outside the class.
@@ -87,8 +90,9 @@ std::shared_ptr<Singleton> Singleton::GetInstance(const std::string& value)
 {
     /**
      * This is a safer way to create an instance. instance = new Singleton is
-     * dangeruous in case two instance threads wants to access at the same time
+     * dangerous in case two instance threads wants to access at the same time
      */
+    std::lock_guard<std::mutex> lock(mutex_);
     if(singleton_==nullptr){
         singleton_ = Create(value);
     }
