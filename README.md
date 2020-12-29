@@ -1,4 +1,6 @@
 # cpp_design_patterns
+
+# C++17 based code
 Common Design Patterns in C++ on Ubuntu Linux (>18.04) with g++ compiler.
 Note: One may modify CMakeLists.txt file to use clang++/llvm toolchain instead.
 
