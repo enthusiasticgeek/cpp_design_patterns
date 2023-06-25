@@ -7,3 +7,4 @@ cd _build
 cmake .. -DCMAKE_INSTALL_PREFIX=../_install
 make
 make install
+chmod a+x *.sh
