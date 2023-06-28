@@ -7,7 +7,7 @@ Note: One may modify CMakeLists.txt file to use clang++/llvm toolchain instead.
 # Dependencies
 sudo apt install g++ cmake valgrind
 
-Reference URLs:
+# Reference URLs:
 
 https://refactoring.guru/design-patterns/cpp
 https://sourcemaking.com/design_patterns
